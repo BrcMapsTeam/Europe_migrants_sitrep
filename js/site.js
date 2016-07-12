@@ -395,7 +395,7 @@ $.when(dataCall, geomCall).then(function(dataArgs, geomArgs){
 	var dateFormat = d3.time.format("%m/%d/%Y");
     data.forEach(function(d){
         d['Last Update'] = dateFormat.parse(d['Last Update']);
-		if (d['Country']=='Austria') {date_updated=d['Last Update'];};
+		if (d['Country']=='Greece') {date_updated=d['Last Update'];};
     });
 	$("#date_update").html("<p class='desc'><i>Date Updated:  " + date_updated.getDate() + " / " + (date_updated.getMonth()+1) + " / " + date_updated.getFullYear() + "</i></p>");
     generateDashboard(data,geom);
