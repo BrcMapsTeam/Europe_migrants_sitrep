@@ -52,9 +52,9 @@ function generateDashboard(data,geom){
  	.domain([0,Date.now()])   
     .labelAccessor(function(d){
 		if (Number(d)!=0){
-			var year = d.getFullYear();
+			var year  = d.getFullYear();
 			var month = d.getMonth() + 1;
-			var day = d.getDate();
+			var day   = d.getDate();
 			return day+'/'+month+'/'+year;
 		} else {
             return 'No Data Reported';
@@ -393,12 +393,16 @@ $.when(dataCall, geomCall).then(function(dataArgs, geomArgs){
     var data = hxlProxyToJSON(dataArgs[0],true);
     //console.log(data);
 	var dateFormat = d3.time.format("%m/%d/%Y");
+	var dates = [];
     data.forEach(function(d){
         d['Last Update'] = dateFormat.parse(d['Last Update']);
-		if (d['Country']=='Greece') {date_updated=d['Last Update'];};
+        dates.push(d['Last Update']);      
+        console.log(dates);
+        var maxDate=new Date(Math.max.apply(null,dates));
+        console.log(maxDate);
+		date_updated=maxDate;
     });
 	$("#date_update").html("<p class='desc'><i>Date Updated:  " + date_updated.getDate() + " / " + (date_updated.getMonth()+1) + " / " + date_updated.getFullYear() + "</i></p>");
     generateDashboard(data,geom);
 	generateStats("#key_stats",data);
 });
-
