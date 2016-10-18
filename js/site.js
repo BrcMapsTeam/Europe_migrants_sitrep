@@ -402,7 +402,7 @@ $.when(dataCall, geomCall).then(function(dataArgs, geomArgs){
         console.log(maxDate);
 		date_updated=maxDate;
     });
-	$("#date_update").html("<p class='desc'><i>Date Updated:  " + date_updated.getDate() + " / " + (date_updated.getMonth()+1) + " / " + date_updated.getFullYear() + "</i></p>");
+	$("#date_update").html("Date last updated:  " + date_updated.getDate() + " / " + (date_updated.getMonth()+1) + " / " + date_updated.getFullYear());
     generateDashboard(data,geom);
 	generateStats("#key_stats",data);
 });
