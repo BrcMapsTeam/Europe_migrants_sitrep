@@ -81,7 +81,7 @@ p {
 }
 
 .stats_table {
-	width: 300px;
+	width: 90%;
 	height: 320px;
 	table-layout: fixed;
 }
@@ -96,6 +96,11 @@ th {
     width: 150px;
 }
 
+.ind {
+	font-weight: bold;
+	margin-top: 10px;
+}
+
 .btn {
 	background: #e60000;  /* button colour */
 	color: #ffffff;  	  /* text colour */
@@ -103,6 +108,10 @@ th {
 	font-weight: bold;
 	font-size: 13px;
 	
+}
+
+.page-header {
+	margin-top: 0px;
 }
 
 #logo {
